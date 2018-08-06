@@ -96,7 +96,7 @@ struct InputSymbol
     }
     break;
     default:
-      throw std::exception("unexpected symbol type in InputSymbol");
+      throw std::runtime_error("unexpected symbol type in InputSymbol");
     }
 
     return bRet;
@@ -252,7 +252,7 @@ public:
       return false;
 
     if (nodesArray.empty())
-      throw std::exception("no pattern was set for state machine");
+      throw std::runtime_error("no pattern was set for state machine");
     
     return tryMatchPatternPart(0, path, 0);
   }
